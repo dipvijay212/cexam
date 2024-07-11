@@ -1,17 +1,19 @@
 #include<stdio.h>
 #include<conio.h>
-#include <string.h>
-void main(){
-   char string[20],temp;
-   int i,length;
-   printf("Enter String : ");
-   scanf("%s",string);
-   length=strlen(string)-1;
-   for(i=0;i<strlen(string)/2;i++){
-      temp=string[i];
-      string[i]=string[length];
-      string[length--]=temp;
-   }
-   printf("Reverse string :%s",string);
-   getch();
+void reverse_string(char* str) {
+    char rev;
+    int i, j;
+    for (i = 0, j = strlen(str) - 1; i < j; i++, j--) {
+        rev = str[i];
+        str[i] = str[j];
+        str[j] = rev;
+    }
+}
+
+void  main() {
+    char str[] = "Dipvijay";
+    printf("Original string: %s\n", str);
+    reverse_string(str);
+    printf("Reversed string: %s\n", str);
+    getch();
 }
